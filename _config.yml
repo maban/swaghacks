@@ -1,0 +1,13 @@
+# Site settings
+title: Swag Hacks
+description: Ideas for hacking your conference swag!
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+
+collections:
+  hacks:
+    output: true
+  patterns:
+    output: true

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+
+  <body class="template-{{ page.section }}">
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <ul class="resources">
+        {% for hack in site.hacks %}
+        <li class="resource {{ hack.status }}">
+            <a href="{{hack.url}}" class="resource-url">
+              {% if hack.image %}<img src="{{ hack.image }}" alt="{{ hack.image }}"/>{% endif %}
+                <span class="resource-description">
+                    <h2 class="resource-title">{{ hack.title }}</h2>
+                    {% if hack.author %}<p class="resource-author">By <strong>{{ hack.author }}</strong></p>{% endif %}
+                    {{ hack.excerpt }}
+                </span>
+            </a>
+        </li>
+        {% endfor %}
+        </ul>
+
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+</html>

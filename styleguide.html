@@ -1,0 +1,59 @@
+---
+title: Pattern Primer
+layout: page
+---
+
+<ul class="xx-swatches">
+
+    <li class="xx-swatch">
+        <span class="xx-swatch-preview" style="font-family: Helvetica, Arial, sans-serif">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+            abcdefghijklmnopqrstuvwxyz<br/>
+            0123456789!?@£$%^&*()_+-=’”,.:;
+        </span>
+        <span class="xx-swatch-details">Helvetica <code>$font-sans-regular</code> <strong>Body text</strong></span>
+    </li>
+
+    <li class="xx-swatch">
+        <span class="xx-swatch-preview" style="font-family: 'baskerville', 'Times', sans-serif">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+            abcdefghijklmnopqrstuvwxyz<br/>
+            0123456789!?@£$%^&*()_+-=’”,.:;
+        </span>
+        <span class="xx-swatch-details">baskerville <code>$font-serif-regular</code> <strong>Quotes</strong></span>
+    </li>
+
+    <li class="xx-swatch">
+        <span class="xx-swatch-preview" style="font-family: 'Monaco', 'Courier', monospace">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+            abcdefghijklmnopqrstuvwxyz<br/>
+            0123456789!?@£$%^&*()_+-=’”,.:;
+        </span>
+        <span class="xx-swatch-details">Monaco <code>$font-monospace-regular</code> <strong>Code samples</strong></span>
+    </li>
+
+</ul>
+
+{% for patterns in site.patterns %}
+{% if patterns.url contains '.html' %}
+<div class="xx-pattern" id="{{ patterns.url | replace:'.html','' | replace:'/patterns/','' }}">
+
+    <details class="xx-pattern-details">
+
+        <summary class="xx-pattern-name">{{ patterns.url | replace:'.html','' | replace:'/patterns/','' }}</summary>
+
+        {% highlight html linenos %}
+        {{ patterns.content }}
+        {% endhighlight %}
+
+        <div class="xx-pattern-description">{{ patterns.description }}</div>
+
+    </details>
+
+    <div class="xx-pattern-preview">
+        {{ patterns.content }}
+    </div>
+
+</div>
+{% endif %}
+{% endfor %}

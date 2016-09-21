@@ -1,0 +1,231 @@
+.resources {
+    list-style-type: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.resource {
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.3);
+    transition: 0.2s;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    -moz-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: inherit;
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        -moz-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    p {
+        font-size: 15px;
+        font-weight: lighter;
+    }
+}
+
+.resource-tags {
+    margin: 0;
+    li {
+        display: inline-block;
+        padding: 5px 7px;
+        border-radius: 3px;
+        background: #E0E0E0;
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    li:before {
+        content: "#";
+        padding-right: 0.25em;
+        color: #A0A0A0;
+    }
+}
+
+.resource-description {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.resource-description > *:last-child {
+    margin-bottom: 0;
+}
+
+.resource-url {
+    display: block;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.resource-title {
+    margin-bottom: 5px;
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.resource-author,
+.resource-publisher,
+.resource-language {
+    margin: 0;
+}
+
+.resource-type-hack .resource-url,
+.resource-type-hack .resource-add {
+    padding-top: 35px;
+    border-radius: 3px;
+    background-size: 21px;
+    background-position: 98% 8px;
+    background-repeat: no-repeat;
+}
+
+
+.resource-type-hack .resource-url {
+    background-color: $color-6;
+    background-image: url("/images/icons/wrench/wrench.png");
+    background-image: url("/images/icons/wrench/wrench.svg");
+    background-size: 22px;
+    background-position: 98% 7px;
+    &:hover,
+    &:focus {
+        background-color: $color-6-darken;
+    }
+}
+
+.resources .resource-add {
+    //opacity: 0.55;
+    max-width: 250px;
+    padding-top: 0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+    &:hover,
+    &:focus {
+        //opacity: 1;
+        -moz-transform: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.resource-add .resource-url {
+    padding-top: 0;
+}
+
+.resource-add .resource-title {
+    background-image: url("/images/icons/add/add.png");
+    background-image: url("/images/icons/add/add.svg");
+    background-image: url("/images/icons/add/add.svg");
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: 0px 10px;
+    padding: 10px 0 10px 32px;
+}
+
+.recommended:before {
+    content: "★";
+    position: absolute;
+    top: -1px;
+    left: 18px;
+    font-size: 13px;
+    background-color: #FAF97B;
+    padding: 3px 6px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.4),
+    0px 1px 0px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 600px) {
+    .resources {
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+    // Set 2-column config
+
+    .resource {
+        float: left;
+        width: 48%;
+        margin-right: 4%;
+    }
+
+    .resource:nth-child(odd) {
+        clear: left;
+    }
+
+    .resource:nth-child(even) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .resource {
+        float: left;
+        width: 32%;
+        margin-right: 2%;
+    }
+
+    // Undo 2-column config
+
+    .resource:nth-child(odd) {
+        clear: none;
+    }
+
+    .resource:nth-child(even) {
+        margin-right: 2%;
+    }
+
+    // Set 3-column config
+
+    .resource:nth-child(3n+1) {
+        clear: left;
+    }
+
+    .resource:nth-child(3n+3) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1500px) {
+
+    .resource {
+        float: left;
+        width: 23%;
+        margin-right: 2.6666%;
+    }
+
+    // Undo 2-column config
+
+    .resource:nth-child(even) {
+        margin-right: 2.6666%;
+    }
+
+    // Undo 3-column config
+
+    .resource:nth-child(3n+1) {
+        clear: none;
+    }
+
+    .resource:nth-child(3n+3) {
+        margin-right: 2.6666%;
+    }
+
+    // Set 4-column config
+
+    .resource:nth-child(4n+1) {
+        clear: left;
+    }
+
+    .resource:nth-child(4n+4) {
+        margin-right: 0;
+    }
+}

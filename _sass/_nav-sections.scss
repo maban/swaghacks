@@ -1,0 +1,41 @@
+.nav-sections {
+    clear: both;
+    width: 100%;
+    @media (min-width: 1050px) {
+        clear: none;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        @media (min-width: 1050px) {
+            display: flex;
+        }
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+        display: block;
+        border-bottom: 5px solid #424242;
+        @media (min-width: 600px) {
+            float: left;
+        }
+    }
+    a {
+        display: block;
+        padding: 15px 15px 10px 15px;
+        color: #fff;
+        border-bottom: 5px solid #424242;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .section-home {
+        flex: 1;
+    }
+
+}
