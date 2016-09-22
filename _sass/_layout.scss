@@ -53,9 +53,6 @@
 /**
  * Page content
  */
-.page-content {
-    padding: $spacing-unit 0;
-}
 
 .page-heading {
     font-size: 20px;
@@ -125,4 +122,9 @@
             font-size: 18px;
         }
     }
+}
+
+
+.page-content {
+  max-width: 40em;
 }

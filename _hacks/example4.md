@@ -3,8 +3,8 @@ title: Example
 layout: hack
 link: https://github.com
 author: Author Name
-image: http://placehold.it/500x250
-excerpt: Lorizzle ipsum ghetto sizzle amizzle, bow wow wow adipiscing shizznit. I saw beyonces tizzles and my pizzle went crizzle things velit, fizzle volutpizzle, suscipit fizzle, gravida yo, i'm in the shizzle. Pellentesque eget sure. Check out this erizzle.
+image: /images/image.jpg
+excerpt: Lorizzle ipsum ghetto sizzle amizzle, bow wow wow adipiscing shizznit. I saw beyonces tizzles and my pizzle went crizzle things velit.
 ---
 
 Lorizzle ipsum ghetto sizzle amizzle, bow wow wow adipiscing shizznit. I saw beyonces tizzles and my pizzle went crizzle things velit, fizzle volutpizzle, suscipit fizzle, gravida yo, i'm in the shizzle. Pellentesque eget sure. Check out this erizzle. Fizzle nizzle dawg <a href="">dapibizzle break it down</a> tempizzle brizzle. Mauris crackalackin phat izzle turpis. Nizzle izzle daahng dawg. Pellentesque things rhoncizzle tellivizzle. In shizznit habitasse that's the shizzle dictumst. Shiz dapibizzle. Daahng dawg sizzle urna, pretizzle break it down, ac, eleifend vitae, nunc. Fo shizzle my nizzle shiz. Break yo neck, yall semper yo mamma sizzle shit.

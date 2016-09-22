@@ -5,26 +5,47 @@
   <body class="template-{{ page.section }}">
     {% include header.html %}
 
-    <div class="page-content">
       <div class="wrapper">
-        <ul class="resources">
-        {% for hack in site.hacks %}
-        <li class="resource {{ hack.status }}">
-            <a href="{{hack.url}}" class="resource-url">
-              {% if hack.image %}<img src="{{ hack.image }}" alt="{{ hack.image }}"/>{% endif %}
-                <span class="resource-description">
-                    <h2 class="resource-title">{{ hack.title }}</h2>
-                    {% if hack.author %}<p class="resource-author">By <strong>{{ hack.author }}</strong></p>{% endif %}
-                    {{ hack.excerpt }}
-                </span>
-            </a>
-        </li>
-        {% endfor %}
-        </ul>
+        <section class="cards">
+
+          {% for hack in site.hacks %}
+          <article class="card {{ hack.status }}">
+
+          {% if hack.image %}<img src="{{ hack.image }}" alt="{{ hack.image }}" class="card__image"/>{% endif %}
+
+          <div class="card__description">
+
+            <h2 class="card__title">
+              <a href="{{hack.url}}" class="card__title__url">{{ hack.title }} ☛</a>
+            </h2>
+
+            {% if hack.author %}
+            <div class="card__author">
+              <p>By <strong>{{ hack.author }}</strong></p>
+            </div>
+            {% endif %}
+
+            <div class="card__excerpt">
+              <p>{{ hack.excerpt }}</p>
+            </div>
+
+          </div>
+
+          <ul class="card__metadata">
+            {% if hack.type %}
+            <li class="card__type card__type--{{ hack.type }}"></li>
+            {% endif %}
+            {% if hack.difficulty %}
+            <li class="card__difficulty card__difficulty--{{ hack.difficulty }}"></li>
+            {% endif %}
+          </ul>
+
+          </article>
+          {% endfor %}
+
+        </section>
 
       </div>
-    </div>
-
     {% include footer.html %}
 
   </body>

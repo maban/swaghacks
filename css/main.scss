@@ -27,6 +27,8 @@ $content-width:    800px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+$gutter: 10px;
+
 
 
 // Using media queries with like this:
@@ -46,15 +48,15 @@ $on-laptop:        800px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "buttons",
-        "filter",
-        "icons",
-        "layout",
-        "main",
-        "nav-sections",
-        "podcast",
-        "resources",
-        "syntax-highlighting",
-        "pattern-lib"
+  "base",
+  "buttons",
+  "cards",
+  "filter",
+  "icons",
+  "layout",
+  "main",
+  "nav-sections",
+  "cards",
+  "syntax-highlighting",
+  "pattern-lib"
 ;

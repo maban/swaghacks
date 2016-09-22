@@ -8,10 +8,48 @@
     <div class="page-content">
       <div class="wrapper">
         <h1>{{page.title}}</h1>
-        <img src="{{page.image}}" alt="" />
         {{ content }}
       </div>
     </div>
+
+    <section class="cards">
+
+      {% for hack in site.hacks limit:5 %}
+      <article class="card {{ hack.status }}">
+
+      {% if hack.image %}<img src="{{ hack.image }}" alt="{{ hack.image }}" class="card__image"/>{% endif %}
+
+      <div class="card__description">
+
+        <h2 class="card__title">
+          <a href="{{hack.url}}" class="card__title__url">{{ hack.title }} ☛</a>
+        </h2>
+
+        {% if hack.author %}
+        <div class="card__author">
+          <p>By <strong>{{ hack.author }}</strong></p>
+        </div>
+        {% endif %}
+
+        <div class="card__excerpt">
+          <p>{{ hack.excerpt }}</p>
+        </div>
+
+      </div>
+
+      <ul class="card__metadata">
+        {% if hack.type %}
+        <li class="card__type card__type--{{ hack.type }}"></li>
+        {% endif %}
+        {% if hack.difficulty %}
+        <li class="card__difficulty card__difficulty--{{ hack.difficulty }}"></li>
+        {% endif %}
+      </ul>
+
+      </article>
+      {% endfor %}
+
+    </section>
 
     {% include footer.html %}
 

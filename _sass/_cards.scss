@@ -1,0 +1,297 @@
+.cards {
+    list-style-type: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #333;
+    flex: 1;
+    display: flex;
+    margin: $gutter;
+    font-size: 15px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.3);
+    transition: 0.2s;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+    align-items: flex-start;
+    font-size: 14px;
+    @media (min-width: 600px) {
+      min-width: 300px;
+    }
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      @media (min-width: 500px) {
+        min-width: 500px;
+      }
+    }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+.card__metadata {
+  position: absolute;
+  top: $gutter;
+  right: $gutter;
+}
+
+%card__metadata__item {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  margin-left: $gutter;
+}
+
+.card__type {
+  @extend %card__metadata__item;
+}
+
+.card__type--shirt {
+  background-image: url("/images/icons/wrench/wrench.svg");
+  background-size: 35px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.card__difficulty {
+  @extend %card__metadata__item;
+}
+
+.card__difficulty--easy {
+  background-image: url("/images/icons/add/add.svg");
+  background-size: 35px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.card__description {
+    padding: 10px 20px;
+    display: flex;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    @media (min-width: 500px) {
+      position: absolute;
+      bottom: 0;
+    }
+}
+
+.card__description > *:last-child {
+    margin-bottom: 0;
+}
+
+.card-url {
+    display: flex;
+    align-items: flex-end;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.card__image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.card__title {
+    margin-bottom: 15px;
+    font-size: 22px;
+    line-height: 24px;
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+.card__title__url {
+  background-color: #fff;
+  display: inline;
+  box-shadow: 6px 4px 0 white, -6px -4px 0 white, -6px 4px 0 white, 6px -4px 0 white;
+}
+
+.card__author {
+    margin: 0;
+    display: block;
+    clear: both;
+    color: #fff;
+    margin-bottom: 10px;
+    width: 100%;
+    p {
+      clear: both;
+      box-shadow: 6px 4px 0 black, -6px -4px 0 black, -6px 4px 0 black, 6px -4px 0 black;
+      background-color: #000;
+      display: inline;
+    }
+}
+
+.card__excerpt {
+  width: 100%;
+  p {
+    background-color: #fff;
+    color: #333;
+    display: inline;
+    line-height: 1.8;
+    box-shadow: 6px 4px 0 white, -6px -4px 0 white, -6px 4px 0 white, 6px -4px 0 white;
+  }
+}
+
+.card-type-hack .card-url,
+.card-type-hack .card-add {
+    padding-top: 35px;
+    border-radius: 3px;
+    background-size: 21px;
+    background-position: 98% 8px;
+    background-repeat: no-repeat;
+}
+
+
+.card-type-hack .card-url {
+    background-color: $color-6;
+    background-image: url("/images/icons/wrench/wrench.png");
+    background-image: url("/images/icons/wrench/wrench.svg");
+    background-size: 22px;
+    background-position: 98% 7px;
+    &:hover,
+    &:focus {
+        background-color: $color-6-darken;
+    }
+}
+
+.cards .card-add {
+    //opacity: 0.55;
+    max-width: 250px;
+    padding-top: 0;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.8);
+    &:hover,
+    &:focus {
+        //opacity: 1;
+        -moz-transform: none;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.card-add .card-url {
+    padding-top: 0;
+}
+
+.card-add .card-title {
+    background-image: url("/images/icons/add/add.png");
+    background-image: url("/images/icons/add/add.svg");
+    background-image: url("/images/icons/add/add.svg");
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: 0px 10px;
+    padding: 10px 0 10px 32px;
+}
+
+.recommended:before {
+    content: "★";
+    position: absolute;
+    top: -1px;
+    left: 18px;
+    font-size: 13px;
+    background-color: #FAF97B;
+    padding: 3px 6px;
+    border-radius: 0 0 2px 2px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.4),
+    0px 1px 0px rgba(0,0,0,0.2);
+}
+
+/*
+@media (min-width: 600px) {
+    .cards {
+        float: left;
+        clear: both;
+        width: 100%;
+    }
+
+    // Set 2-column config
+
+    .card {
+        float: left;
+        width: 48%;
+        margin-right: 4%;
+    }
+
+    .card:nth-child(odd) {
+        clear: left;
+    }
+
+    .card:nth-child(even) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .card {
+        float: left;
+        width: 32%;
+        margin-right: 2%;
+    }
+
+    // Undo 2-column config
+
+    .card:nth-child(odd) {
+        clear: none;
+    }
+
+    .card:nth-child(even) {
+        margin-right: 2%;
+    }
+
+    // Set 3-column config
+
+    .card:nth-child(3n+1) {
+        clear: left;
+    }
+
+    .card:nth-child(3n+3) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1500px) {
+
+    .card {
+        float: left;
+        width: 23%;
+        margin-right: 2.6666%;
+    }
+
+    // Undo 2-column config
+
+    .card:nth-child(even) {
+        margin-right: 2.6666%;
+    }
+
+    // Undo 3-column config
+
+    .card:nth-child(3n+1) {
+        clear: none;
+    }
+
+    .card:nth-child(3n+3) {
+        margin-right: 2.6666%;
+    }
+
+    // Set 4-column config
+
+    .card:nth-child(4n+1) {
+        clear: left;
+    }
+
+    .card:nth-child(4n+4) {
+        margin-right: 0;
+    }
+}*/
